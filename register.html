@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Register - BookSmart Hotels</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+<body>
+  <h2>Create an Account</h2>
+  <form id="reg-form">
+    <label>Full Name: <input type="text" id="full_name" /></label><br>
+    <label>Email: <input type="email" id="email" /></label><br>
+    <label>Mobile: <input type="tel" id="mobile" /></label><br>
+    <button type="button" pys-onClick="validate_form">Register</button>
+  </form>
+
+  <py-script>
+def validate_form(*args):
+    name = Element("full_name").element.value
+    email = Element("email").element.value
+    mobile = Element("mobile").element.value
+
+    if not name or not email or not mobile:
+        alert("All fields are required!")
+    elif not mobile.isdigit() or len(mobile) < 10:
+        alert("Please enter a valid mobile number.")
+    else:
+        alert(f"Thank you for registering, {name}!")
+  </py-script>
+</body>
+</html>
