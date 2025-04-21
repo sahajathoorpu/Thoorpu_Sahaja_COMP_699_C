@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wishlist - BookSmart Hotels</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="/" class="logo"><span>BookSmart</span>Hotels</a>
+        <nav class="navbar">
+            <a href="/">Home</a>
+            <a href="/profile">Profile</a>
+        </nav>
+    </header>
+
+    <section class="profile-section">
+        <div class="profile-container">
+            <h2>My Wishlist</h2>
+            <div class="wishlist-items">
+                <div class="hotel-card">
+                    <img src="{{ url_for('static', filename='images/hotel-placeholder.jpg') }}" alt="Hotel">
+                    <h3>Sunset Beach Resort</h3>
+                    <p>Maldives</p>
+                    <p>From $299/night</p>
+                    <button class="btn">Book Now</button>
+                    <button class="btn remove">Remove</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Hotels | BookSmart</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <a href="/" class="logo"><span>BookSmart</span>Hotels</a>
+    <nav class="navbar">
+        <a href="/">home</a>
+        <a href="#book">book</a>
+        <a href="#search">search</a>
+        <a href="#reviews">reviews</a>
+        <a href="#contact">contact</a>
+    </nav>
+    <div class="icons">
+        <i class="fas fa-search" id="search-btn"></i>
+        <a href="/login"><i class="fas fa-user"></i></a>
+
+
+
+    </div>
+</header>
+
+<section class="profile-section">
+    <div class="profile-container">
+        <h2>Find Your Perfect Hotel</h2>
+        <form method="GET" action="/search">
+            <input type="text" name="location" placeholder="Enter city or hotel name" required>
+            <input type="date" name="checkin" required>
+            <input type="date" name="checkout" required>
+            <input type="number" name = "no of guests adults" placeholder="Adults" required>
+            <input type="number" name = "no of guests children" placeholder="Children" required>
+            <input type="number" name = "rooms" placeholder="Rooms" required>
+
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</section>
+
+{% if hotels %}
+    <section class="profile-section">
+        <div class="profile-container">
+            <h2>Search Results</h2>
+            <ul class="profile-options">
+                {% for hotel in hotels %}
+                    <li><a href="/hotel/{{ hotel.id }}">{{ hotel.name }} - {{ hotel.city }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% else %}
+    <p>No hotels found matching your criteria.</p>
+{% endif %}
+
+
+</body>
+</html>

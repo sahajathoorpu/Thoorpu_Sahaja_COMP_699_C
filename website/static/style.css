@@ -1,0 +1,1438 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root{
+    --orange: #ffa500 ;
+}
+
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    outline: none;
+    text-decoration: none;
+    transition: all .2s linear ;
+
+}
+
+*::selection{
+    background: var(--orange);
+    color:white;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: smooth;
+    scroll-behavior: smooth;
+}
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    background:#333;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 2rem 9%;
+
+
+}
+
+header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: white;
+    text-transform: uppercase;
+}
+
+header .logo span{
+    color: var(--orange);
+}
+
+header .navbar a{
+    color: white;
+    font-size: 2rem ;
+    margin:.8rem;
+
+}
+
+header .navbar a:hover{
+    color:var(--orange);
+}
+
+header .icons i{
+    font-size: 2.5rem;
+    color:white;
+    cursor:pointer;
+    margin-right:2rem;
+
+}
+
+header .icons i:hover{
+    color:var(--orange);
+}
+
+header .search-bar-container{
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    padding: 1.5rem 2rem;
+    background: #333;
+    border-top: .1rem solid rgba(255, 255, 255,.2);
+    display:flex;
+    align-items:center;
+    z-index:1001;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+header .search-bar-container #search-bar{
+    width:100%;
+    padding:1rem;
+    text-transform: none;
+    color:#333;
+    font-size: 1.7rem;
+    border-radius:.5rem;
+}
+
+header .search-bar-container label{
+    color:white;
+    cursor: pointer;
+    font-size:3rem;
+    margin-left:1.5rem;
+}
+
+header .search-bar-container label:hover{
+    color: var(--orange);
+}
+
+/* Home section  styling */
+#home {
+    min-height: 100vh;
+    background: url("images/hotel-banner.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 9%;
+    position: relative;
+    text-align: center;
+}
+
+#home::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+.home-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 700px;
+}
+
+.home-content h1 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.home-content p {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.home-content .btn {
+    background: var(--orange);
+    color: white;
+    padding: 1.2rem 3rem;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+    margin: 0 1rem;
+    display: inline-block;
+}
+
+.home-content .btn:hover {
+    background: white;
+    color: var(--orange);
+    border: 1px solid var(--orange);
+}
+
+/*Profile section*/
+
+.profile-section {
+    padding: 12rem 2rem 4rem 2rem; /* leaves space for the fixed header */
+    background: #f2f2f2;
+    min-height: 100vh;
+}
+
+.profile-container {
+    max-width: 600px;
+    background: white;
+    margin: 0 auto;
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.profile-container h2 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.profile-options {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-options li {
+    margin: 1.5rem 0;
+}
+
+.profile-options a {
+    font-size: 1.8rem;
+    color: #333;
+    padding: 1rem 2rem;
+    display: inline-block;
+    width: 100%;
+    border: 0.1rem solid #ccc;
+    border-radius: 0.5rem;
+    background-color: white;
+    transition: background 0.3s, color 0.3s;
+}
+
+.profile-options a:hover {
+    background: var(--orange);
+    color: white;
+    border-color: var(--orange);
+}
+
+/* Login/sign up styles*/
+
+.form-container {
+    max-width: 40rem;
+    margin: 12rem auto;
+    padding: 3rem;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.form-toggle-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.form-toggle-labels label {
+    flex: 1;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1.8rem;
+    background: #f0f0f0;
+    cursor: pointer;
+    color: #333;
+}
+
+#toggle-form:not(:checked) ~ .form-toggle-labels .login-label,
+#toggle-form:checked ~ .form-toggle-labels .signup-label {
+    background: var(--orange);
+    color: #fff;
+}
+
+.form {
+    display: none;
+}
+
+#toggle-form:not(:checked) ~ .login-form {
+    display: block;
+}
+
+#toggle-form:checked ~ .signup-form {
+    display: block;
+}
+
+.form h2 {
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.form input {
+    width: 100%;
+    padding: 1.2rem;
+    margin: 1rem 0;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    color: #333;
+    background: #f9f9f9;
+}
+
+.form button {
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--orange);
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-top: 1.5rem;
+}
+
+.form button:hover {
+    background: #e69500;
+}
+
+
+/* Search Page Styles */
+
+.profile-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.profile-container form input[type="text"],
+.profile-container form input[type="date"],
+.profile-container form input[type="number"],
+.profile-container form button {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.6rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background: #f9f9f9;
+}
+
+.profile-container form button {
+    background: var(--orange);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.profile-container form button:hover {
+    background: #e69500;
+}
+
+.profile-options li a {
+    font-size: 1.6rem;
+    color: #555;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    display: block;
+    transition: 0.3s ease;
+}
+
+.profile-options li a:hover {
+    background-color: var(--orange);
+    color: white;
+}
+
+/* Section Styling */
+.section {
+    padding: 8rem 5% 5rem;
+    text-align: center;
+}
+
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.section-description {
+    font-size: 1.8rem;
+    color: #666;
+    margin-bottom: 4rem;
+}
+
+/* Book Section */
+#book {
+    background: #f9f9f9;
+}
+
+.booking-form {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.form-grid .form-group input {
+    width: 100%;
+    padding: 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+}
+
+/* Packages Section */
+#packages {
+    background: #fff;
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.package-card {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+}
+
+.package-content {
+    padding: 2rem;
+}
+
+.package-content h3 {
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.price {
+    color: var(--orange);
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.package-features {
+    list-style: none;
+    margin: 2rem 0;
+    padding: 0;
+}
+
+.package-features li {
+    font-size: 1.6rem;
+    color: #666;
+    margin: 1rem 0;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.package-features li::before {
+    content: "•";
+    color: var(--orange);
+    position: absolute;
+    left: 0;
+}
+
+/* Reviews Section */
+#reviews {
+    background: #f9f9f9;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+}
+
+.review-card {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 3rem 2rem;
+    box-shadow: 0 0.3rem 1rem rgba(0,0,0,0.1);
+}
+
+.review-rating {
+    color: var(--orange);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.review-text {
+    font-size: 1.6rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.review-author {
+    font-size: 1.4rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Contact Section */
+#contact {
+    background: #fff;
+}
+
+/* Empty State for No Reviews */
+.no-reviews {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #f9f9f9;
+    border-radius: 1rem;
+    margin: 2rem 0;
+}
+
+.no-reviews i {
+    font-size: 5rem;
+    color: #ddd;
+    margin-bottom: 2rem;
+}
+
+.no-reviews h3 {
+    font-size: 2.4rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.no-reviews p {
+    font-size: 1.6rem;
+    color: #999;
+}
+
+/* Referrals Page */
+.referral-code-container {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.1);
+    margin: 2rem 0;
+}
+
+.referral-code {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: var(--orange);
+    padding: 1.5rem;
+    background: #f9f9f9;
+    border-radius: 0.5rem;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.referral-benefits {
+    margin-top: 3rem;
+}
+
+.referral-benefits h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.referral-benefits ul {
+    list-style: none;
+}
+
+.referral-benefits li {
+    font-size: 1.6rem;
+    color: #666;
+    margin: 1rem 0;
+    padding-left: 2.5rem;
+    position: relative;
+}
+
+.referral-benefits li:before {
+    content: "✓";
+    color: var(--orange);
+    position: absolute;
+    left: 0;
+}
+
+/* Points System */
+.points-container {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.1);
+}
+
+.points-balance {
+    font-size: 4rem;
+    color: var(--orange);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.points-options {
+    display: grid;
+    gap: 2rem;
+}
+
+.points-option {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.points-option:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+}
+
+.points-option h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.points-option p {
+    font-size: 1.4rem;
+    color: #666;
+}
+
+/* Booking History */
+.booking-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.booking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.booking-title {
+    font-size: 2rem;
+    color: #333;
+}
+
+.booking-status {
+    padding: 0.5rem 1.5rem;
+    border-radius: 2rem;
+    font-size: 1.4rem;
+}
+
+.status-completed {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-upcoming {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.status-cancelled {
+    background: #ffebee;
+    color: #c62828;
+}
+
+/* Manage Bookings */
+.manage-booking-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.action-btn {
+    flex: 1;
+    padding: 1rem;
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-modify {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.btn-cancel {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.btn-modify:hover,
+.btn-cancel:hover {
+    transform: translateY(-2px);
+}
+
+/* Notifications */
+.notification-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.notification-item {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.notification-item:hover {
+    transform: translateX(5px);
+}
+
+.notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.notification-title {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.notification-time {
+    font-size: 1.4rem;
+    color: #999;
+}
+
+.notification-content {
+    font-size: 1.6rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Settings Page */
+.settings-container {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.1);
+}
+
+.settings-group {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.settings-group:last-child {
+    border-bottom: none;
+}
+
+.settings-group h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.setting-label {
+    font-size: 1.6rem;
+    color: #666;
+}
+
+.setting-control {
+    display: flex;
+    align-items: center;
+}
+
+/* Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--orange);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.review-card {
+    background: #fff;
+    padding: 2.5rem 3rem;
+    margin: 2rem auto;
+    max-width: 700px;
+    border-radius: 1rem;
+    box-shadow: 0 0.8rem 1.5rem rgba(0, 0, 0, 0.08);
+    font-size: 1.8rem;
+    line-height: 1.7;
+    color: #444;
+    text-align: left;
+    position: relative;
+}
+
+.review-card::before {
+    content: "★";
+    font-size: 2.5rem;
+    color: var(--orange);
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+/* Contact Section */
+#contact {
+    background: #fff;
+}
+
+/* Settings Page Styles */
+.settings-options {
+    text-align: left;
+    margin-top: 2rem;
+}
+
+.setting-group {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    border-radius: 0.5rem;
+}
+
+.setting-group h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.switch {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+.switch input {
+    margin-right: 1rem;
+}
+
+.setting-select {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+}
+
+/* Help Page Styles */
+.help-sections {
+    text-align: left;
+}
+
+.help-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 0.5rem;
+}
+
+.faq-item {
+    margin: 1.5rem 0;
+}
+
+.faq-item h4 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 0.8rem;
+}
+
+.faq-item p {
+    font-size: 1.4rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Feedback Page Styles */
+.feedback-form {
+    max-width: 100%;
+    margin-top: 2rem;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 3rem;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.rating input:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+    color: var(--orange);
+}
+
+textarea[name="feedback"] {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    resize: vertical;
+}
+
+/* Contact Page Additional Styles */
+.contact-method {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.contact-method i {
+    font-size: 3rem;
+    color: var(--orange);
+    margin-bottom: 1rem;
+}
+
+.contact-method h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 0.8rem;
+}
+
+.contact-method p {
+    font-size: 1.4rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Reviews Page Styles */
+.reviews-list {
+    margin-top: 2rem;
+}
+
+.review-card {
+    background: #fff;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.1);
+}
+
+.review-card h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.review-card .rating {
+    color: var(--orange);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.review-card p {
+    font-size: 1.6rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.review-date {
+    font-size: 1.4rem;
+    color: #999;
+}
+
+/* Referrals Page Styles */
+.referral-info {
+    text-align: left;
+    padding: 2rem;
+}
+
+.referral-code {
+    background: #f5f5f5;
+    padding: 1.5rem;
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: var(--orange);
+    border-radius: 0.5rem;
+    text-align: center;
+    margin: 2rem 0;
+    letter-spacing: 2px;
+}
+
+.referral-info ol {
+    margin: 2rem 0;
+    padding-left: 2rem;
+}
+
+.referral-info li {
+    font-size: 1.6rem;
+    color: #666;
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+/* Wishlist Page Styles */
+.wishlist-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.hotel-card {
+    background: #fff;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0.3rem 0.6rem rgba(0,0,0,0.1);
+}
+
+.hotel-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.hotel-card h3 {
+    font-size: 1.8rem;
+    color: #333;
+    padding: 1.5rem;
+    margin: 0;
+}
+
+.hotel-card p {
+    font-size: 1.4rem;
+    color: #666;
+    padding: 0 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.hotel-card .btn {
+    width: calc(100% - 3rem);
+    margin: 1rem 1.5rem;
+    padding: 1rem;
+}
+
+.hotel-card .btn.remove {
+    background: #ff4444;
+}
+
+/* Favorites Page Styles */
+.favorites-list {
+    margin-top: 2rem;
+}
+
+.favorite-item {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 0.8rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0.2rem 0.4rem rgba(0,0,0,0.1);
+}
+
+.favorite-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-right: 1.5rem;
+}
+
+.favorite-details {
+    flex-grow: 1;
+}
+
+.favorite-details h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.favorite-details p {
+    font-size: 1.4rem;
+    color: #666;
+}
+
+/* Notifications Page Styles */
+.notifications-list {
+    margin-top: 2rem;
+}
+
+.notification {
+    display: flex;
+    align-items: start;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 0.8rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0.2rem 0.4rem rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.notification:hover {
+    transform: translateX(5px);
+}
+
+.notification i {
+    font-size: 2.4rem;
+    color: var(--orange);
+    margin-right: 1.5rem;
+    padding-top: 0.5rem;
+}
+
+.notification-content {
+    flex-grow: 1;
+}
+
+.notification-content h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.notification-content p {
+    font-size: 1.4rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.notification-time {
+    font-size: 1.2rem;
+    color: #999;
+}
+
+/* Settings Page Styles */
+.settings-options {
+    margin-top: 2rem;
+}
+
+.setting-group {
+    background: #fff;padding: 2rem;
+    border-radius: 0.8rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 0.2rem 0.4rem rgba(0,0,0,0.1);
+}
+
+.setting-group h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.switch {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    cursor: pointer;
+}
+
+.switch input {
+    margin-right: 1rem;
+}
+
+.switch .slider {
+    font-size: 1.6rem;
+    color: #666;
+}
+
+.setting-select {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    color: #333;
+    background: #f5f5f5;
+}
+
+/* Earn Points and Redeem Points Styles */
+.points-options, .redeem-options {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.points-options .btn, .redeem-options .btn {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.points-options .btn:hover, .redeem-options .btn:hover {
+    background: var(--orange);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Booking History Styles */
+.booking-list {
+    margin-top: 2rem;
+}
+
+.booking-item {
+    background: #fff;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.1);
+}
+
+.booking-item h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.booking-item p {
+    font-size: 1.4rem;
+    color: #666;
+    margin: 0.5rem 0;
+}
+
+/* Manage Bookings Styles */
+.booking-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.booking-actions .btn {
+    flex: 1;
+    padding: 1rem;
+    font-size: 1.4rem;
+}
+
+.booking-actions .btn.cancel {
+    background: #ff4444;
+    color: white;
+}
+
+.booking-actions .btn.cancel:hover {
+    background: #cc0000;
+}
+
+/* Empty State Styles */
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #f9f9f9;
+    border-radius: 1rem;
+    margin: 2rem 0;
+}
+
+.empty-state i {
+    font-size: 4rem;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+}
+
+.empty-state h3 {
+    font-size: 2rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.empty-state p {
+    font-size: 1.4rem;
+    color: #999;
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 3rem auto 0 auto;
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1.4rem;
+    margin: 1.2rem 0;
+    font-size: 1.8rem;
+    border: 1px solid #ccc;
+    border-radius: 0.6rem;
+    background: #fdfdfd;
+    color: #333;
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contact-form button {
+    display: inline-block;
+    background: var(--orange);
+    color: #fff;
+    font-size: 2rem;
+    padding: 1.2rem 4rem;
+    border: none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 1rem;
+}
+
+.contact-form button:hover {
+    background: #e69500;
+    transform: translateY(-2px);
+}
+
+/* Admin Login/Signup Styles */
+.admin-login-form,
+.admin-signup-form {
+    max-width: 100%;
+}
+
+.admin-login-form input,
+.admin-signup-form input {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    border: 1px solid #ddd;
+    border-radius: 0.8rem;
+    background: #f8f8f8;
+}
+
+.admin-login-form button,
+.admin-signup-form button {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.8rem;
+    background: var(--orange);
+    color: white;
+    border: none;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+}
+
+.admin-login-form button:hover,
+.admin-signup-form button:hover {
+    background: #e69500;
+    transform: translateY(-2px);
+}
+
+.admin-note {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    color: #666;
+}
+
+.admin-note a {
+    color: var(--orange);
+    text-decoration: underline;
+}
+
+.admin-note a:hover {
+    color: #e69500;
+}
+
+.form-container h2 {
+    font-size: 2.8rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 3rem;
+}

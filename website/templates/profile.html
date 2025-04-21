@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile - BookSmart Hotels</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="/" class="logo"><span>BookSmart</span>Hotels</a>
+        <nav class="navbar">
+            <a href="/">Home</a>
+            <a href="#book">Book</a>
+            <a href="#packages">Packages</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="icons">
+            <a href="/search">
+                  <i class="fas fa-search" id="search-btn"></i>
+            <a href="/profile"><i class="fas fa-user" id="user-btn"></i></a>
+        </div>
+    </header>
+
+    <section class="profile-section">
+        <div class="profile-container">
+            <h2>User Profile</h2>
+            <ul class="profile-options">
+                 <li><a href="/personal-details">Personal Details</a></li>
+                <li><a href="/payment-methods">Payment Methods</a></li> 
+                <li><a href="/earn-points">Earn Reward Points</a></li>
+                <li><a href="/redeem-points">Redeem Points</a></li>                   
+                <li><a href="/booking-history">Booking History</a></li>  
+                <li><a href="/manage-bookings">Manage Bookings</a></li>
+                <li><a href="/reviews">Reviews</a></li>
+                <li><a href="/referrals">Referrals</a></li>    
+
+                
+                <li><a href="/wishlist">Wishlist</a></li>
+
+
+                
+
+                <li><a href="/favorites">Favorites</a></li>
+
+                
+
+
+                
+                <li><a href="/notifications">Notifications</a></li>
+                <li><a href="/settings">Settings</a></li>
+                <li><a href="/help">Help & Support</a></li>
+                <li><a href="/feedback">Feedback</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+                
+            
+                <li><a href="/logout">Sign Out</a></li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html>

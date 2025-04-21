@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notifications - BookSmart Hotels</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="/" class="logo"><span>BookSmart</span>Hotels</a>
+        <nav class="navbar">
+            <a href="/">Home</a>
+            <a href="/profile">Profile</a>
+        </nav>
+    </header>
+
+    <section class="profile-section">
+        <div class="profile-container">
+            <h2>Notifications</h2>
+            <div class="notifications-list">
+                <div class="notification">
+                    <i class="fas fa-bell"></i>
+                    <div class="notification-content">
+                        <h3>Upcoming Stay Reminder</h3>
+                        <p>Your stay at Grand Plaza Hotel starts tomorrow!</p>
+                        <span class="notification-time">2 hours ago</span>
+                    </div>
+                </div>
+                <div class="notification">
+                    <i class="fas fa-gift"></i>
+                    <div class="notification-content">
+                        <h3>Special Offer</h3>
+                        <p>Get 20% off on your next booking!</p>
+                        <span class="notification-time">1 day ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

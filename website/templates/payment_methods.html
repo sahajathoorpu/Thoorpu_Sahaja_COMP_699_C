@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Methods - BookSmart Hotels</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="/" class="logo"><span>BookSmart</span>Hotels</a>
+        <nav class="navbar">
+            <a href="/">Home</a>
+            <a href="/profile">Profile</a>
+        </nav>
+    </header>
+
+    <section class="profile-section">
+        <div class="profile-container">
+            <h2>Payment Methods</h2>
+            <form action="/add-payment-method" method="POST" class="payment-form">
+                <input type="text" name="card_name" placeholder="Name on Card" required>
+                <input type="text" name="card_number" placeholder="Card Number" required>
+                <div class="card-details">
+                    <input type="text" name="expiry" placeholder="MM/YY" required>
+                    <input type="text" name="cvv" placeholder="CVV" required>
+                </div>
+                <button type="submit" class="btn">Add Payment Method</button>
+            </form>
+
+            <div class="saved-cards">
+                <h3>Saved Payment Methods</h3>
+                {% if payment_methods %}
+                    {% for method in payment_methods %}
+                        <div class="card-item">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Card ending in {{ method[2] }}</span>
+                            <a href="/delete-payment-method/{{method[0]}}" class="delete-btn">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No payment methods saved yet.</p>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+</body>
+</html>

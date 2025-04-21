@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BookSmart Hotels</title>
+
+        <!--font-awesome cdn -->
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        
+        <!--custome css file link-->
+
+            <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+    </head>
+
+    <body>
+     <!--header section starts-->
+     <header>
+        <a href="#" class="logo"><span>BookSmart</span>Hotels</a>
+        <nav class="navbar">
+            <a href="/">home</a>
+            <a href="#book">book</a>
+            <a href="packages">packages</a>
+            <a href="reviews">reviews</a>
+            <a href="contact">contact</a>
+        </nav>
+
+        <div class="icons">
+            <!--<i class="fas fa-search" id="search-btn"></i>-->
+            <a href="/search">
+                <i class="fas fa-search" id="search-btn"></i>
+            </a>
+           <!-- <a href="/website/templates/search.html"><i class="fas fa-search"></i></a>-->
+            <a href="/login"><i class="fas fa-user"></i></a>
+
+            
+            
+        </div>
+
+        <form action="" class="search-bar-container">
+            <input type="search" id="search-bar" placehoder="search here...">
+            <label for="search-bar" class="fas fa-serach"></label>
+        </form>     
+    </header> 
+    
+    <!-- Home Section -->
+    <section id="home">
+        <form method="GET" action="/home"></form>
+        <div class="home-content">
+            <h1>Welcome to BookSmart Hotels</h1>
+            <p>Your comfort is our priority </p>
+            <p>Book rooms or list your property with ease.</p>
+            <!--<a href="/website/templates/login.html" class="btn">Login / signup</a>-->
+            <a href="/admin/signup" class="btn admin-btn" id="list-property">List Your Property</a>
+        </div>
+    </section>
+
+    <!-- Book Section -->
+    <section id="book" class="section">
+        <div class="section-content">
+            <h2 class="section-title">Book Your Stay</h2>
+            <p class="section-description">Find and book your perfect hotel room</p>
+            
+            <form class="booking-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <input type="text" placeholder="Where are you going?" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" placeholder="Adults" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" placeholder="Children" min="0">
+                    </div>
+                </div>
+                <button type="submit" class="btn">Search Hotels</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="section">
+        <div class="section-content">
+            <h2 class="section-title">Special Packages</h2>
+            <p class="section-description">Discover our carefully curated hotel packages</p>
+            
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-content">
+                        <h3>Luxury Escape</h3>
+                        <p class="price">From $299/night</p>
+                        <ul class="package-features">
+                            <li>5-star Accommodation</li>
+                            <li>Spa Treatment</li>
+                            <li>Gourmet Dining</li>
+                            <li>Airport Transfer</li>
+                        </ul>
+                        <button class="btn">View Details</button>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <div class="package-content">
+                        <h3>Family Gateway</h3>
+                        <p class="price">From $199/night</p>
+                        <ul class="package-features">
+                            <li>Spacious Suite</li>
+                            <li>Kids Activities</li>
+                            <li>Breakfast Included</li>
+                            <li>Pool Access</li>
+                        </ul>
+                        <button class="btn">View Details</button>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <div class="package-content">
+                        <h3>Business Plus</h3>
+                        <p class="price">From $249/night</p>
+                        <ul class="package-features">
+                            <li>Executive Room</li>
+                            <li>Meeting Facilities</li>
+                            <li>Business Lounge</li>
+                            <li>Fast Wi-Fi</li>
+                        </ul>
+                        <button class="btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="section">
+        <div class="section-content">
+            <h2 class="section-title">Guest Reviews</h2>
+            <p class="section-description">What our guests say about their stay</p>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-content">
+                        <div class="review-rating">★★★★★</div>
+                        <p class="review-text">"Exceptional service and beautiful accommodations. Will definitely return!"</p>
+                        <p class="review-author">- Sarah Johnson</p>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-content">
+                        <div class="review-rating">★★★★★</div>
+                        <p class="review-text">"Perfect location and amazing staff. Made our family vacation special."</p>
+                        <p class="review-author">- Michael Chen</p>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-content">
+                        <div class="review-rating">★★★★★</div>
+                        <p class="review-text">"Clean rooms, great amenities, and outstanding breakfast!"</p>
+                        <p class="review-author">- Emma Davis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="section-content">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-description">Get in touch with our friendly team</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 Hotel Street, City, Country</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+1 234 567 8900</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@booksmarthotels.com</p>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>   
+
+    </body>
+</html>
+
